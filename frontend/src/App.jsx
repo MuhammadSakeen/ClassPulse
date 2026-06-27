@@ -1,8 +1,11 @@
+import Header from "./Header";
+import Footer from "./Footer";
+
 function App () {
   return (
     <div>
-      <h1>ClassPulse</h1>
-      <p>Context-Based Classroom Presence Verification Platform</p>
+        <Header />
+        <Footer />
     </div>
   );
 }
