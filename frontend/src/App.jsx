@@ -1,6 +1,8 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import Projects from "./Projects";
+import Buttons from "./Buttons";
+import { useState } from "react";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         about="Context based student prescense verification system with profress tracker"
         number={1212}
       />
+      <Buttons/>
     </div>
   );
 }
