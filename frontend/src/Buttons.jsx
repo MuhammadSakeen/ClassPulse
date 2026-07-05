@@ -1,16 +1,16 @@
 import { useState } from "react";
 
 function Buttons() {
-    const [ button, setButton ] = useState(1)
-    console.log("Button Rendered!")
-    console.log(button)
-    function clickHandler() {
-        setButton(button + 1)
-        console.log("hello world!!!")
+    const [ isLoggedIn, setIsLoggedIn ] = useState(false)
+    function loginHandler() {
+        setIsLoggedIn(!isLoggedIn)
     }
+    
+
     return (
-        <>
-            <button onClick={clickHandler}>ClickMe</button>
+        <>  
+            {isLoggedIn ? <p>Welcome!, Muhammad Sakeen N</p> : <p>Please Login</p>}
+            <button onClick={loginHandler}>{isLoggedIn ? "Logout" : "Login"}</button>
         </>
     );
 }
