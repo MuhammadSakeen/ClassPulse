@@ -947,3 +947,332 @@ Reason:
 Derived values should be calculated during rendering instead of being stored as separate state.
 
 ---
+
+# Day 5 - React Router (Part 1)
+
+---
+
+# Why React Router?
+
+A React application often contains multiple pages such as:
+
+- Landing
+- Login
+- Register
+- Student Dashboard
+- Faculty Dashboard
+
+React Router enables navigation between these pages **without refreshing the browser**, making the application behave as a **Single Page Application (SPA)**.
+
+Without React Router, React only renders a single page and cannot switch components based on the URL.
+
+---
+
+# Single Page Application (SPA)
+
+A Single Page Application loads only **one HTML page**.
+
+When the URL changes, React updates only the required component instead of reloading the entire webpage.
+
+Flow:
+
+```text
+User Navigates
+        ↓
+URL Changes
+        ↓
+React Router Detects Change
+        ↓
+React Updates Required Component
+        ↓
+No Full Page Refresh
+```
+
+---
+
+# BrowserRouter
+
+`BrowserRouter` enables routing for the entire React application.
+
+It listens for browser URL changes and allows React Router to determine which page should be displayed.
+
+Think of it as the **traffic controller** of the application.
+
+Example:
+
+```jsx
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+);
+```
+
+---
+
+## Why wrap `<App />`?
+
+Before:
+
+```text
+App
+```
+
+After:
+
+```text
+BrowserRouter
+        ↓
+       App
+```
+
+Now every component inside `App` can use React Router features.
+
+---
+
+# BrowserRouter Responsibilities
+
+- Enables routing.
+- Detects browser URL changes.
+- Passes routing information to React Router.
+
+It **does not decide** which component should be rendered.
+
+---
+
+# Routes
+
+`Routes` is a container that holds all the routes (pages) of the application.
+
+Think of it as a collection of every possible page.
+
+Example:
+
+```jsx
+<Routes>
+
+</Routes>
+```
+
+---
+
+# Responsibilities of Routes
+
+- Stores all `Route` components.
+- Searches for a matching route whenever the URL changes.
+- Renders the matching `Route`.
+
+---
+
+# Route
+
+A `Route` is a rule.
+
+It maps a specific URL (`path`) to a React component.
+
+Example:
+
+```text
+URL = "/login"
+
+↓
+
+Render Login Component
+```
+
+Another example:
+
+```text
+URL = "/register"
+
+↓
+
+Render Register Component
+```
+
+---
+
+# React Router Hierarchy
+
+```text
+BrowserRouter
+        ↓
+      Routes
+        ↓
+      Route
+```
+
+---
+
+# Responsibilities
+
+## BrowserRouter
+
+- Enables routing.
+- Detects URL changes.
+
+---
+
+## Routes
+
+- Holds all available routes.
+- Finds the matching route.
+
+---
+
+## Route
+
+- Represents a single route.
+- Maps a URL to a React component.
+
+---
+
+# Complete Routing Flow
+
+Suppose the user visits:
+
+```text
+localhost:5173/register
+```
+
+Execution Flow:
+
+```text
+User enters:
+
+localhost:5173/register
+        ↓
+BrowserRouter detects the URL change.
+        ↓
+BrowserRouter asks Routes to find a matching Route.
+        ↓
+Routes checks all available Route components.
+        ↓
+Route with path="/register" matches.
+        ↓
+React renders the Register component.
+        ↓
+Only the required component updates.
+(No full page refresh)
+```
+
+---
+
+# BrowserRouter vs Routes vs Route
+
+| Component | Responsibility |
+|------------|----------------|
+| BrowserRouter | Enables routing and listens for URL changes. |
+| Routes | Holds all routes and finds the matching route. |
+| Route | Maps a URL to a React component. |
+
+---
+
+# Important Difference
+
+```text
+BrowserRouter
+        ↓
+Detects URL changes
+
+Routes
+        ↓
+Searches all Route components
+
+Route
+        ↓
+If its path matches,
+returns the corresponding component.
+```
+
+---
+
+# Key Takeaways
+
+✅ React Router enables navigation between pages without refreshing the browser.
+
+✅ React applications using React Router behave as Single Page Applications (SPA).
+
+✅ BrowserRouter enables routing and listens for URL changes.
+
+✅ Routes is a container that stores all Route components.
+
+✅ Route maps a URL (`path`) to a React component.
+
+✅ BrowserRouter does **not** decide which component to render.
+
+✅ Routes searches for the matching Route.
+
+✅ Route renders its component only when its `path` matches the current URL.
+
+---
+
+# Link
+
+`Link` is a React Router component used for navigation between pages.
+
+Instead of reloading the browser like an HTML `<a>` tag, `Link` updates the URL and allows React Router to render the appropriate component.
+
+Example:
+
+```jsx
+import { Link } from "react-router-dom";
+
+<Link to="/login">Login</Link>
+```
+
+---
+
+# Why not use `<a>`?
+
+HTML:
+
+```jsx
+<a href="/login">Login</a>
+```
+
+Flow:
+
+```text
+Click Link
+      ↓
+Browser Reloads
+      ↓
+React Starts Again
+      ↓
+Entire Page Refreshes
+```
+
+React Router:
+
+```jsx
+<Link to="/login">Login</Link>
+```
+
+Flow:
+
+```text
+Click Link
+      ↓
+URL Changes
+      ↓
+BrowserRouter Detects Change
+      ↓
+Routes Finds Matching Route
+      ↓
+Component Updates
+      ↓
+No Page Refresh
+```
+
+---
+
+# Difference
+
+| HTML `<a>` | React Router `<Link>` |
+|------------|-----------------------|
+| Uses `href` | Uses `to` |
+| Reloads the browser | No page refresh |
+| Traditional navigation | Client-side navigation |
