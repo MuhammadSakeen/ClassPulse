@@ -12,9 +12,11 @@ button {
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: all .3s ease;
 }
 
 button:hover {
     background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.12);
 }

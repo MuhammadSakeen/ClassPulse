@@ -1,0 +1,68 @@
+.login-page,
+.register-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8fafc;
+    padding: 40px 20px;
+}
+
+.login-card,
+.register-card {
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    padding: 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .05);
+}
+
+.login-card h1,
+.register-card h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    text-align: center;
+}
+
+.login-card h2,
+.register-card h2 {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.login-card p,
+.register-card p {
+    color: #6b7280;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.forgot-password {
+    text-align: right;
+    margin-top: 15px;
+    color: #2563eb;
+    cursor: pointer;
+    font-size: .95rem;
+}
+
+.login-card button,
+.register-card button {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.register-link {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.register-link a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}

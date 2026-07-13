@@ -7,8 +7,13 @@
     color: #111827;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     background-color: #f8fafc;
-
+    color:#111827;
+    overflow-x:hidden;
 }

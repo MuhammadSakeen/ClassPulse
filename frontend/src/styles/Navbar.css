@@ -13,6 +13,8 @@ nav {
 
 nav h1 {
     font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.5px;
 }
 
 nav ul {
@@ -22,7 +24,29 @@ nav ul {
 }
 
 nav a {
+    position: relative;
     text-decoration: none;
-    color: #000000;
+    color: #111827;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #2563eb;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #2563eb;
 }
