@@ -9,10 +9,10 @@ function Register() {
                 <h1>ClassPulse</h1>
                 <h2>Welcome, New User</h2>
                 <p>Register Now, to enter classroom</p>
-                <Input icon={<FaUser />} type="text" placeholder="Enter your Name"/>
-                <Input icon={<FaEnvelope />} type="email" placeholder="Enter your Email"/>
-                <Input icon={<FaLock />} type="password" placeholder="Set Password"/>
-                <Input icon={<FaLock />} type="password" placeholder="Confirm Password"/>
+                <Input LeftIcon={<FaUser />} type="text" placeholder="Enter your Name"/>
+                <Input LeftIcon={<FaEnvelope />} type="email" placeholder="Enter your Email"/>
+                <Input LeftIcon={<FaLock />} type="password" placeholder="Set Password"/>
+                <Input LeftIcon={<FaLock />} type="password" placeholder="Confirm Password"/>
                 <Button>
                     Register
                 </Button>

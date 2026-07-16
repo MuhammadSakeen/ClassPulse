@@ -1,28 +1,28 @@
 import FeatureCard from "./FeatureCard";
 import "../../styles/Features.css"
-import { FaBluetoothB, FaChartLine, FaRobot } from "react-icons/fa";
+import { FaKey, FaChartLine, FaRobot } from "react-icons/fa";
 import { MdQuiz } from "react-icons/md";
 
 const FEATURES = [
     {
-        icon: <FaBluetoothB />,
-        title: "Proximity Verification",
-        description: "Verify students using BLE technology."
+        icon: <FaKey />,
+        title: "Dynamic Session Code",
+        description: "Securely verify classroom participation using time-sensitive session codes."
     },
     {
         icon: <FaChartLine />,
-        title: "Student Analytics",
-        description: "Monitor classroom participation."
+        title: "Classroom Analytics",
+        description: "Track attendance, quiz performance, and classroom participation."
     },
     {
         icon: <MdQuiz />,
         title: "Live Quiz",
-        description: "Conduct quizzes during lectures."
+        description: "Conduct interactive quizzes during live classroom sessions."
     },
     {
         icon: <FaRobot />,
-        title: "AI Engagement",
-        description: "Analyze classroom engagement using AI."
+        title: "AI Analytics",
+        description: "Generate classroom insights and engagement reports using AI."
     }
 ]
 
