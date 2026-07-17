@@ -1,13 +1,13 @@
 # ClassPulse
 
-ClassPulse is a Context-Based Classroom Presence Verification and Engagement Platform designed to improve attendance authenticity through proximity verification, real-time attendance sessions, and classroom participation analytics.
+ClassPulse is a smart classroom platform that streamlines attendance management and classroom engagement through dynamic session codes, live quizzes, attendance tracking, and real-time analytics.
 
 ## Tech Stack
 
 - React
-- TypeScript
+- JavaScript
 - Node.js
 - Express.js
-- PostgreSQL
+- MongoDB
 - Prisma ORM
 - Socket.IO
