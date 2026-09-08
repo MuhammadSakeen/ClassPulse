@@ -38,6 +38,12 @@
     color: red !important;
 }
 
+.register-card .error-message {
+    color: red !important;
+    text-align: center;
+    margin-top: 20px;
+}
+
 .login-card p,
 .register-card p {
     color: #6b7280;
